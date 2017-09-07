@@ -1,3 +1,38 @@
-body{
-    
+/*************************/
+/* GENERAL/UNIVERSAL*/
+/*************************/
+body {
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    padding-top: 20px;
+    color: #AAAAAA;
+}
+
+a {
+    text-decoration: none;
+    color: #AAAAAA;
+}
+
+a:hover{
+    color: #555555;
+}
+
+/*************************/
+/* NAVIGATION */
+/*************************/
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li:first-child {
+    margin: 0 10px 0 0;
+}
+
+nav ul li:last-child {
+    margin: 0 0 0 20px;
 }
