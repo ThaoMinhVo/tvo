@@ -39,7 +39,7 @@ header{
     background: #EEE;
 }
 
-.animationContainer object{
+.object{
     position:absolute;
     width: 200px;
     top:50vh;
