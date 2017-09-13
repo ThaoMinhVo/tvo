@@ -5,8 +5,16 @@
         <title>TvO Portfolio</title>
         <link rel="stylesheet" href="css/mainstyles.css">
         <link rel="stylesheet" type="text/css" href="fonts/fonts.min.css" />
+        <script src="js/jquery-3.2.1.js"></script>
     </head>
-    <body>
+    <body class="stop-scrolling">
+        <div class="animationOverlay">
+            <div class="animationContainer">
+                <object id="tsvg" type="image/svg+xml" data="img/svg/t.svg"></object>
+                <object id="vsvg" type="image/svg+xml" data="img/svg/v.svg"></object>
+                <object id="osvg" type="image/svg+xml" data="img/svg/o.svg"></object>
+            </div>
+        </div>
         <header>
             <nav>
                 <ul>
@@ -21,6 +29,7 @@
         <main></main>
         <footer></footer>
     </body>
+    
+    <script src="js/walkway.js"></script>
     <script src="js/index.js"></script>
-    <script scr="js/vivus.js"></script>
 </html>

@@ -1,10 +1,11 @@
 /*************************/
 /* GENERAL/UNIVERSAL*/
 /*************************/
+
 body {
     font-family: 'Proxima Nova', Georgia, sans-serif;
-    padding-top: 20px;
     color: #AAAAAA;
+    margin: 0;
 }
 
 a {
@@ -14,6 +15,46 @@ a {
 
 a:hover{
     color: #555555;
+}
+
+/* Temp style */
+header{
+    display: none;
+}
+
+/*************************/
+/* ANIMATION BLOCK */
+/*************************/
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+.animationOverlay {
+    position: relative;
+    top:0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: #EEE;
+}
+
+.animationContainer object{
+    position:absolute;
+    width: 200px;
+    top:50vh;
+    left: 50vw;
+    margin-left: -100px;
+    margin-top: -83.5px;
+}
+
+path, line, polyline {
+    stroke: #fff
+    stroke-width: 2px
+}
+
+path {
+    fill: transparent
 }
 
 /*************************/
