@@ -10,4 +10,27 @@ $(document).ready(function(){
     var obtT = new Vivus('tsvg', {type: 'oneByOne', duration: 500});
     var obtV = new Vivus('vsvg', {type: 'oneByOne', duration: 500});
     var obtO = new Vivus('osvg', {type: 'oneByOne', duration: 500});
+    
+    
+    
+    obtO.play(function() {
+        // called after the animation completes
+        setTimeout(introAnimation, 500);
+    });
 });
+
+function introAnimation(){
+    $('#T').animate({
+        left: '-=200px',
+        top: '50vh',
+        height: '50px'
+    });
+    $('#V').animate({
+        left: '+=100px',
+        top: '50vh'
+    });
+    $('#O').animate({
+        left: '+=250px',
+        top: '50vh'
+    });
+}
