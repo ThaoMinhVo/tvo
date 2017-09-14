@@ -22,15 +22,14 @@ $(document).ready(function(){
 function introAnimation(){
     $('#T').animate({
         left: '-=200px',
-        top: '50vh',
-        height: '50px'
+        top: '-+50px'
     });
     $('#V').animate({
         left: '+=100px',
-        top: '50vh'
+        top: '-+50px'
     });
     $('#O').animate({
         left: '+=250px',
-        top: '50vh'
+        top: '-+50px'
     });
 }
