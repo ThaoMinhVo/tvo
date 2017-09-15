@@ -23,28 +23,61 @@ $(document).ready(function(){
 });
 
 function introAnimation(){
+    expandName();
+    
+    //setTimeout(collapseName, 1000);
+}
+
+function expandName(){
     $('#T').animate({
-        left: '-=400px',
+        left: '-=350px',
         top: '-=100px'
     });
     $('#H').animate({
-        left: '-=250px',
+        left: '-=200px',
         top: '-=100px'
     });
     $('#A').animate({
-        left: '-=170px',
+        left: '-=120px',
         top: '-=100px'
     });
     $('#O').animate({
-        left: '-=50px',
+        //left: '-=00px',
         top: '-=100px'
     });
     $('#V').animate({
-        left: '+=250px',
+        left: '+=200px',
         top: '-=100px'
     });
     $('#O_last').animate({
-        left: '+=385px',
+        left: '+=335px',
         top: '-=100px'
+    });
+}
+
+function collapseName(){
+    $('#T').animate({
+        left: '+=400px',
+        top: '+=100px'
+    });
+    $('#H').animate({
+        left: '+=250px',
+        top: '+=100px'
+    });
+    $('#A').animate({
+        left: '+=170px',
+        top: '+=100px'
+    });
+    $('#O').animate({
+        left: '+=50px',
+        top: '+=100px'
+    });
+    $('#V').animate({
+        left: '-=250px',
+        top: '+=100px'
+    });
+    $('#O_last').animate({
+        left: '-=385px',
+        top: '+=100px'
     });
 }
