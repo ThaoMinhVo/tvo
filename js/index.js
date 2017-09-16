@@ -29,27 +29,27 @@ function introAnimation(){
 }
 
 function expandName(){
-    $('#T').animate({
+    $('#T').velocity({
         left: '-=350px',
         top: '-=100px'
     });
-    $('#H').animate({
+    $('#H').velocity({
         left: '-=200px',
         top: '-=100px'
     });
-    $('#A').animate({
+    $('#A').velocity({
         left: '-=120px',
         top: '-=100px'
     });
-    $('#O').animate({
+    $('#O').velocity({
         //left: '-=00px',
         top: '-=100px'
     });
-    $('#V').animate({
+    $('#V').velocity({
         left: '+=200px',
         top: '-=100px'
     });
-    $('#O_last').animate({
+    $('#O_last').velocity({
         left: '+=335px',
         top: '-=100px'
     });
