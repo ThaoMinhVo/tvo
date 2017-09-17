@@ -4,7 +4,7 @@
 
 body {
     font-family: 'Proxima Nova', Georgia, sans-serif;
-    color: #AAAAAA;
+    color: #FFF;
     margin: 0;
 }
 
@@ -22,9 +22,9 @@ header{
     display: none;
 }
 
-/*************************/
+/******************************************************************************/
 /* ANIMATION BLOCK */
-/*************************/
+/******************************************************************************/
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
@@ -36,7 +36,7 @@ header{
     left: 0;
     height: 100vh;
     width: 100vw;
-    background: #EEE;
+    background: #FFF;
 }
 
 .object{
@@ -57,9 +57,24 @@ path {
     fill: transparent
 }
 
-/*************************/
+/**************************************/
+/* 3D ANIMATION */
+/**************************************/
+.dot{
+    width: 20px;
+	height: 20px;
+	background: #D6B16F;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+#dotContainer{
+}
+
+/******************************************************************************/
 /* NAVIGATION */
-/*************************/
+/******************************************************************************/
 
 nav ul {
     list-style-type: none;
