@@ -25,33 +25,34 @@ $(document).ready(function(){
 function introAnimation(){
     expandName();
     
-    //setTimeout(collapseName, 1000);
+    //without function() the timmer doesn't work
+    setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
 }
 
 function expandName(){
     $('#T').velocity({
-        left: '-=350px',
-        top: '-=100px'
+        left: '-=260px',
+        top: '-=50px'
     });
     $('#H').velocity({
-        left: '-=200px',
-        top: '-=100px'
+        left: '-=150px',
+        top: '-=50px'
     });
     $('#A').velocity({
-        left: '-=120px',
-        top: '-=100px'
+        left: '-=85px',
+        top: '-=50px'
     });
     $('#O').velocity({
-        //left: '-=00px',
-        top: '-=100px'
+        left: '+=10px',
+        top: '-=50px'
     });
     $('#V').velocity({
-        left: '+=200px',
-        top: '-=100px'
+        left: '+=150px',
+        top: '-=50px'
     });
     $('#O_last').velocity({
-        left: '+=335px',
-        top: '-=100px'
+        left: '+=255px',
+        top: '-=50px'
     });
 }
 
@@ -82,89 +83,13 @@ function collapseName(){
     });
 }
 
-/******************************************************************************/
-/* 3D ANIMATION */
-/******************************************************************************/
 
-/**************************************/
-/* SETUP */
-/**************************************/
-
-//The userAgent property returns the value of the user-agent header sent by the browser to the server.
-//The value returned, contains information about the name, version and platform of the browser.
-var isWebkit = /Webkit/i.test(navigator.userAgent),
-    isChrome = /Chrome/i.test(navigator.userAgent),
-    isMobile = !!("ontouchstart" in window),
-    isAndroid = /Android/i.test(navigator.userAgent);
-
-//fn = prototype
-$.fn.velocity.defaults.easing = 'easeInOutSine';
-
-/*Randomly generate an integer between two numbers.*/
-function r(min,max){
-    return Math.floor(Math.random() * (max - min + 1) + min);
+/*used to activate all typewriting text on page and delete blink-caret at end of animation*/
+/*idName  - id of container element of text to animate*/
+/*className  - class to add to container element*/
+/*textElement - element of text (span,div,h1, etc)*/
+/*time - duration of animation in milliseconds so know when to stop blink-caret*/
+function activateTypewriter(idName, className, textElement, time){
+    $('#'+idName).addClass(className);
+    setTimeout(function(){$('.'+ className + ' ' + textElement).css('border-right', 'none');}, (time+500));
 }
-
-/**************************************/
-/* DOT CREATION */
-/**************************************/
-
-/*Differentiate dot counts based on roughly-questimated device and browser capabilities.*/
-var dotsCount = isMobile ? (isAndroid ? 40 : 70) : (isChrome ?  200 : 125),
-    dotsHtml = '',
-    $count = $('#count'),
-    $dots;
-
-for(var i = 0; i < dotsCount; i++){
-    dotsHtml += '<div class="dot"></div>';
-}
-
-$dots = $(dotsHtml);
-console.log($count);
-$count.html(dotsCount);
-
-/**************************************/
-/* ANIMATION */
-/**************************************/
-
-var $container = $('#dotsContainer');
-
-var screenWidth = window.screen.availWidth,
-    screenHeight = window.screen.availHeight,
-    chromeHeight = screenHeight - document.documentElement.clientHeight;
-
-var translateZMin = -725,
-    translateZMax = 600;
-
-console.log('screenWidth: ' + screenWidth/2);
-console.log('screenHeight: ' +((screenHeight * 0.45) - chromeHeight));
-
-$container
-    .css('perspective-origin', screenWidth/2 + 'px ' + ((screenHeight * 0.45) - chromeHeight) + 'px')
-    .velocity({
-        perspective: [215,50],
-        rotateZ: [5,0],
-        opacity: [0.85,0.55]
-    },{duration:800, delay:3250, loop: 2});
-
-$dots
-    .velocity({
-        translateX: [
-            function () {return '+=' + r(-screenWidth/2.5, screenWidth/2.5)},
-            function () {return r(0, screenWidth)}
-        ],
-        translateY: [
-            function () {return '+=' + r(-screenHeight/2.75, screenHeight/2.75)},
-            function () {return r(0, screenHeight)}
-        ],
-        translateZ: [
-            function () {return '+=' + r(translateZMin, translateZMax)},
-            function () {return r(translateZMin, translateZMax)}
-        ],
-        opacity: [
-            function () {return Math.random()},
-            function () {return Math.random() + 0.1}
-        ]
-    },{duration: 10000})
-    .velocity('reverse', {easting: "easeOutQuad"})
-    .appendTo($container);

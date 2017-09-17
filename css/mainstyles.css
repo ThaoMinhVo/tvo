@@ -1,3 +1,6 @@
+/*font for typing effect*/
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+
 /*************************/
 /* GENERAL/UNIVERSAL*/
 /*************************/
@@ -10,11 +13,11 @@ body {
 
 a {
     text-decoration: none;
-    color: #AAAAAA;
+    color: #AAA;
 }
 
 a:hover{
-    color: #555555;
+    color: #555;
 }
 
 /* Temp style */
@@ -23,8 +26,30 @@ header{
 }
 
 /******************************************************************************/
-/* ANIMATION BLOCK */
+/* BEGINNING ANIMATION BLOCK */
 /******************************************************************************/
+
+/*TESTING DOT*/
+.centerDot{
+    position:absolute;
+    top: 50vh;
+    left: 50vw;
+    margin-left: -5px;
+    margin-top: -5px;
+    width: 10px;
+	height: 10px;
+	background: red;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+    display: none;
+}
+
+.animationContainer{
+    
+}
+
+
 .stop-scrolling {
   height: 100%;
   overflow: hidden;
@@ -41,15 +66,15 @@ header{
 
 .object{
     position:absolute;
-    width: 200px;
+    width: 150px;
     top:50vh;
     left: 50vw;
-    margin-left: -100px;
-    margin-top: -83.5px;
+    margin-left: -75px;
+    margin-top: -73.5px;
 }
 
 path, line, polyline {
-    stroke: #fff
+    stroke: #FFF
     stroke-width: 2px
 }
 
@@ -58,7 +83,49 @@ path {
 }
 
 /**************************************/
+/* TYPEWRITER */ 
+/**************************************/
+.typeDeveloper{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    position:absolute;
+    top:50vh;
+    left: 50vw;
+    margin-left: -50px;
+    margin-top: -170px;
+}
+
+.typeDeveloper span{
+    color: #AAA;
+    width: 100px;
+    font-family: 'Source Code Pro', monospace;
+    overflow: hidden; /*Hides content until animation shows it*/
+    border-right: .1em solid #AAA; /*blink-caret*/
+    white-space:nowrap; /*content on single line*/
+    margin: 0 auto; /*scrolling effect while typing happens*/
+    letter-spacing: .1em; 
+    animation: 
+        typing 2s steps(9, end),
+        blink-caret .8s step-end 4;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #AAA }
+}
+
+
+/**************************************/
 /* 3D ANIMATION */
+/*Currently not in use*/
 /**************************************/
 .dot{
     width: 20px;
@@ -67,9 +134,6 @@ path {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
-}
-
-#dotContainer{
 }
 
 /******************************************************************************/
