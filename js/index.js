@@ -57,29 +57,29 @@ function expandName(){
 }
 
 function collapseName(){
-    $('#T').animate({
-        left: '+=400px',
-        top: '+=100px'
+    $('#T').velocity({
+        left: '+=260px',
+        top: '+=50px'
     });
-    $('#H').animate({
-        left: '+=250px',
-        top: '+=100px'
+    $('#H').velocity({
+        left: '+=150px',
+        top: '+=50px'
     });
-    $('#A').animate({
-        left: '+=170px',
-        top: '+=100px'
+    $('#A').velocity({
+        left: '+=85px',
+        top: '+=50px'
     });
-    $('#O').animate({
-        left: '+=50px',
-        top: '+=100px'
+    $('#O').velocity({
+        left: '-=10px',
+        top: '+=50px'
     });
-    $('#V').animate({
-        left: '-=250px',
-        top: '+=100px'
+    $('#V').velocity({
+        left: '-=150px',
+        top: '+=50px'
     });
-    $('#O_last').animate({
-        left: '-=385px',
-        top: '+=100px'
+    $('#O_last').velocity({
+        left: '-=255px',
+        top: '+=50px'
     });
 }
 
