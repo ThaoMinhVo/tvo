@@ -22,7 +22,7 @@ a:hover{
 
 /* Temp style */
 header{
-    display: none;
+    text-align: right;
 }
 
 /******************************************************************************/
@@ -30,7 +30,7 @@ header{
 /******************************************************************************/
 
 /*TESTING DOT*/
-.centerDot{
+/*.centerDot{
     position:absolute;
     top: 50vh;
     left: 50vw;
@@ -43,10 +43,10 @@ header{
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
     display: none;
-}
+}*/
 
 .animationContainer{
-    
+    position:relative;
 }
 
 
@@ -85,31 +85,6 @@ path {
 /**************************************/
 /* TYPEWRITER */ 
 /**************************************/
-.typeDeveloper{
-    display: flex;
-    justify-content: center;
-    width: 100px;
-    position:absolute;
-    top:50vh;
-    left: 50vw;
-    margin-left: -50px;
-    margin-top: -170px;
-}
-
-.typeDeveloper span{
-    color: #AAA;
-    width: 100px;
-    font-family: 'Source Code Pro', monospace;
-    overflow: hidden; /*Hides content until animation shows it*/
-    border-right: .1em solid #AAA; /*blink-caret*/
-    white-space:nowrap; /*content on single line*/
-    margin: 0 auto; /*scrolling effect while typing happens*/
-    letter-spacing: .1em; 
-    animation: 
-        typing 2s steps(9, end),
-        blink-caret .8s step-end 4;
-}
-
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
@@ -122,6 +97,48 @@ path {
   50% { border-color: #AAA }
 }
 
+
+.typeDeveloper{
+    display: flex;
+    justify-content: center;
+    width: 216px;
+    position:absolute;
+    top:50vh;
+    left: 50vw;
+    margin-left: -108px;
+    margin-top: -170px;
+}
+
+.typeDeveloper span{
+    color: #AAA;
+    width: 216px;
+    font-family: 'Source Code Pro', monospace;
+    overflow: hidden; /*Hides content until animation shows it*/
+    border-right: .1em solid #AAA; /*blink-caret*/
+    white-space:nowrap; /*content on single line*/
+    margin: 0 auto; /*scrolling effect while typing happens*/
+    letter-spacing: .1em; 
+    animation: 
+        typing 1.5s steps(19, end),
+        blink-caret .5s step-end 4;
+}
+
+/**************************************/
+/* FLORAL DESIGN */ 
+/**************************************/
+#floralOutline,
+#floralColors{
+    display:none;
+}
+
+.floralPlacement{
+    width: 1200px;
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    margin-left: -610px;
+    margin-top: -350px;
+}
 
 /**************************************/
 /* 3D ANIMATION */
