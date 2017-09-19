@@ -7,14 +7,21 @@ $(document).ready(function(){
     //    duration: 8000
     //}).draw();
     
+    var obtT = new Vivus('tsvg', {type: 'sync', duration: 100});
+    var obtH = new Vivus('hsvg', {type: 'sync', duration: 100});
+    var obtA = new Vivus('asvg', {type: 'sync', duration: 100});
+    var obtO = new Vivus('osvg', {type: 'sync', duration: 100});
+    var obtV = new Vivus('vsvg', {type: 'sync', duration: 100});
+    var obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});
     
     $('.object').velocity("transition.flipXIn");
     
     
     
-
+    obtO.play(function() {
+        // called after the animation completes
         setTimeout(introAnimation, 500);
-
+    });
 });
 
 function introAnimation(){
