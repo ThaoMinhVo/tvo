@@ -22,7 +22,7 @@ a:hover{
 
 /* Temp style */
 header{
-    text-align: right;
+    /*text-align: right;*/
 }
 
 /******************************************************************************/
@@ -56,19 +56,21 @@ header{
 }
 
 .animationOverlay {
-    position: relative;
+    position: absolute;
     top:0;
     left: 0;
     height: 100vh;
     width: 100vw;
     background: #FFF;
+    z-index: 1;
+    /*background: transparent;*/
 }
 
 .object{
     position:absolute;
     width: 150px;
     top:50vh;
-    left: 50vw;
+    left: 50%;
     margin-left: -75px;
     margin-top: -73.5px;
 }
@@ -101,7 +103,7 @@ path {
 .typeDeveloper{
     display: flex;
     justify-content: center;
-    width: 216px;
+    width: 225px;
     position:absolute;
     top:50vh;
     left: 50vw;
@@ -111,7 +113,7 @@ path {
 
 .typeDeveloper span{
     color: #AAA;
-    width: 216px;
+    width: 225px;
     font-family: 'Source Code Pro', monospace;
     overflow: hidden; /*Hides content until animation shows it*/
     border-right: .1em solid #AAA; /*blink-caret*/
@@ -119,7 +121,7 @@ path {
     margin: 0 auto; /*scrolling effect while typing happens*/
     letter-spacing: .1em; 
     animation: 
-        typing 1.5s steps(19, end),
+        typing 1.5s steps(20, end),
         blink-caret .5s step-end 4;
 }
 
@@ -156,20 +158,10 @@ path {
 /******************************************************************************/
 /* NAVIGATION */
 /******************************************************************************/
-
-nav ul {
-    list-style-type: none;
+.navbar-nav{
+    width: 100%;
 }
-
-nav ul li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-nav ul li:first-child {
-    margin: 0 10px 0 0;
-}
-
-nav ul li:last-child {
-    margin: 0 0 0 20px;
+.navbar-toggleable-lg .navbar-nav .nav-link{
+    width: 33%;
+    text-align: right;
 }

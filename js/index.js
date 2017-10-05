@@ -22,7 +22,7 @@ function introAnimation(){
     setTimeout(function(){$('#floralColors').velocity("fadeOut",{ duration: 1500 }); $('#typeDeveloper').velocity("fadeOut",{ duration: 1500 });}, 6500);
     setTimeout(collapseName, 8000);
     setTimeout(translateLogo, 8000);
-    //setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
+    setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
 }
 
 function expandName(){
@@ -102,9 +102,10 @@ function activateFloralColors(){
 
 /*Moves logo to the top left hand corner*/
 function translateLogo(){
+    //if screen is bigger than 1200
     $('.object').velocity({
-        left: '200px',
-        top: '100px',
+        left: '106px',
+        top: '90px',
         width: '70px'
     });
     
