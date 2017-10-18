@@ -168,15 +168,23 @@ path {
     display: flex;
     align-items:flex-end;
     justify-content: center;
-    padding-left: 75%;
+    padding-left: 70%;
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link{
-    width: 33%;
+    width: 25%;
     color: #AAA;
 }
 
 .navbar-inverse .navbar-nav .active>.nav-link, .navbar-inverse .navbar-nav .nav-link.active, .navbar-inverse .navbar-nav .nav-link.open, .navbar-inverse .navbar-nav .open>.nav-link{
     color: #CD9C43;
+}
+
+#toggleBtn{
+    margin-top: 20px;
+}
+
+.navbar-inverse .navbar-toggler-icon{
+    background-image: url(../img/svg/navToggler.svg);
 }
 
