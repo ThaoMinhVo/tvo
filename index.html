@@ -12,10 +12,10 @@
         <div class="animationOverlay">
             <div class="animationContainer">
                 <div class="centerDot"></div>
-                <div id="typeDeveloper" class="">
-                    <span>Developer + Designer</span>
-                </div>
-                <div class="container">
+                <div id="navContainer" class="container navContainer">
+                    <div id="typeDeveloper" class="">
+                        <span>Developer + Designer</span>
+                    </div>
                     <div id="T" class="object">
                         <svg version="1.1" id="tsvg" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
                              xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 275 229"
@@ -294,21 +294,26 @@
         </div>
         <div class="container">
             <header>
-                <nav class="navbar navbar-toggleable-lg">
-                    <button class="navbar-toggler navbar-toggler-right" type="buttom" data-toggle="collapse" data-ta>
-                       <span class="navbar-toggler-icon"></span>
+                <nav class="navbar navbar-toggleable-md navbar-inverse">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
                     </button>
-                    <a class="navbar-brand" href="#">
-                       <img src="img/svg/tvo.svg" width="70" height="70" alt="">
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <div class="navbar-nav pull-right">
-                            <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
-                            <a class="nav-link" href="#">Work</a>
-                            <a class="nav-link" href="#">Resume</a>
-                        </div>
+                    <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                        <a class="navbar-brand" href="#">
+                           <img src="img/svg/tvo.svg" width="70" height="70" alt="">
+                        </a>
+                        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Work</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Resume</a>
+                            </li>
+                        </ul>
                     </div>
-                    
                 </nav>
             </header>
             <main>

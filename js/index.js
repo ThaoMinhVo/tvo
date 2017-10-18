@@ -108,7 +108,6 @@ function translateLogo(){
         top: '90px',
         width: '70px'
     });
-    
 }
 
 
