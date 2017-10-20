@@ -23,6 +23,8 @@ function introAnimation(){
     setTimeout(collapseName, 8000);
     setTimeout(translateLogo, 8000);
     setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
+    
+    setTimeout(loadBackground, 10000);
 }
 
 function expandName(){
@@ -110,6 +112,32 @@ function translateLogo(){
     });
 }
 
+function loadBackground(){
+    //find height and width of viewport (not screen)
+    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    
+    console.log('width: ' + w + ' | height: ' + h);
+
+    //find hypotenuse and set as diameter/height/width of circle
+    var hypotenuse =  Math.ceil(Math.sqrt((w*w) + (h*h)));
+    console.log('hypotenuse: ' + hypotenuse);
+    $('#sectionBackground').css({'height': ''+hypotenuse+'px','width': ''+hypotenuse+'px'});
+    
+    var minusLeft = (hypotenuse/2)-(w/2);
+    var minusTop = (hypotenuse/2)-(h/2);
+    
+    $('#sectionBackground').css("margin-left", "-"+minusLeft+"px");
+    $('#sectionBackground').css("margin-top", "-"+minusTop+"px");
+    console.log('margin-left: -'+((hypotenuse/2)-(w/2)));
+    console.log('margin-top: -'+((hypotenuse/2)-(h/2)));
+    
+    //find tan(0) = height/width
+    var degrees = Math.ceil(Math.atan((w/2)/(h/2))*180/Math.PI);
+    console.log('degrees: '+degrees);
+    
+    //$('.sectionDivider').velocity({rotateZ: degrees+"deg",},);
+}
 
 
 

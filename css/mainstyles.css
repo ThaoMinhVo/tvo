@@ -35,7 +35,7 @@ positionRelative{
 /******************************************************************************/
 
 /*TESTING DOT*/
-/*.centerDot{
+.centerDot{
     position:absolute;
     top: 50vh;
     left: 50vw;
@@ -47,8 +47,8 @@ positionRelative{
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
-    display: none;
-}*/
+    z-index: 1000;
+}
 
 .animationContainer{
     position:relative;
@@ -188,3 +188,28 @@ path {
     background-image: url(../img/svg/navToggler.svg);
 }
 
+/******************************************************************************/
+/* PAGE SECTIONS */
+/******************************************************************************/
+#sectionBackground{
+    position:absolute;
+    top: 0;
+    left: 0;
+}
+
+.sectionName{
+    
+}
+
+.sectionDivider{
+    background-image: url(../img/page/goldBar.png);
+    position:absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.section{
+    height: 100vh;
+    width: 100vw;
+    background-color: transparent;
+}
