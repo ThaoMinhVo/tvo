@@ -35,7 +35,7 @@ positionRelative{
 /******************************************************************************/
 
 /*TESTING DOT*/
-.centerDot{
+/*.centerDot{
     position:absolute;
     top: 50vh;
     left: 50vw;
@@ -48,7 +48,7 @@ positionRelative{
 	-webkit-border-radius: 5px;
 	border-radius: 5px;
     z-index: 1000;
-}
+}*/
 
 .animationContainer{
     position:relative;
@@ -185,7 +185,7 @@ path {
 }
 
 .navbar-inverse .navbar-toggler-icon{
-    background-image: url(../img/svg/navToggler.svg);
+    background-image: url("../img/svg/navToggler.svg");
 }
 
 /******************************************************************************/
@@ -195,17 +195,19 @@ path {
     position:absolute;
     top: 0;
     left: 0;
+    padding: 0;
 }
 
 .sectionName{
-    
+    background-position: center;
 }
 
 .sectionDivider{
-    background-image: url(../img/page/goldBar.png);
-    position:absolute;
+    background-image: url("../img/page/goldBar.png");
+    background-size: cover;
     height: 100%;
     width: 100%;
+    z-index: 1000;
 }
 
 .section{
@@ -213,3 +215,4 @@ path {
     width: 100vw;
     background-color: transparent;
 }
+
