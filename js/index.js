@@ -155,7 +155,7 @@ function loadBackground(){
     console.log('degrees: '+degrees);
     
     $('.sectionDivider').velocity({rotateZ: degrees+"deg",},1000);
-    $('.sectionName').css('background-image', 'url("img/page/about.png")');
+    //$('.sectionName').css('background-image', 'url("img/page/about.png")');
 
     scroll = true;
 }
@@ -233,8 +233,8 @@ window.addEventListener('wheel', function(event){
 function changeState(newState){
     switch(newState) {
         case 0:
-            $('.sectionName').css('background-image','url(../img/page/about.png)');
-            $('.sectionName').velocity(easeInSine);
+            //$('.sectionName').css('background-image','url(img/page/about.png)');
+            //$('.sectionName').velocity(easeInSine);
             break;
         case 1:
             break;

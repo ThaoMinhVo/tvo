@@ -199,15 +199,23 @@ path {
 }
 
 .sectionName{
-    background-position: center;
+    background-image: url("../img/page/about.png");
+    position:absolute;
+    background-size: cover;
+    left: 50%;
+    top: 50%;
+    margin-left: -550px;
+    margin-top: -120px;
+    width: 1100px;
+    height: 241px; 
 }
 
 .sectionDivider{
     background-image: url("../img/page/goldBar.png");
     background-size: cover;
+    position:absolute;
     height: 100%;
     width: 100%;
-    z-index: 1000;
 }
 
 .section{
