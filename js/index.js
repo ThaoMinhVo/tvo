@@ -43,7 +43,7 @@ function introAnimation(){
     
     setTimeout(loadBackground, 10000);*/
     $('.animationOverlay').hide();
-    loadBackground();
+    //loadBackground();
 }
 
 function expandName(){
@@ -230,18 +230,6 @@ window.addEventListener('wheel', function(event){
         
 });
 
-function changeState(newState){
-    switch(newState) {
-        case 0:
-            //$('.sectionName').css('background-image','url(img/page/about.png)');
-            //$('.sectionName').velocity(easeInSine);
-            break;
-        case 1:
-            break;
-        case 2:
-            break;
-    }    
-};
 
 
 
