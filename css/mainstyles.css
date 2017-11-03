@@ -30,6 +30,16 @@ positionRelative{
     position:relative;
 }
 
+.center{
+    text-align: center;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /******************************************************************************/
 /* BEGINNING ANIMATION BLOCK */
 /******************************************************************************/
@@ -189,36 +199,105 @@ path {
 }
 
 /******************************************************************************/
-/* PAGE SECTIONS */
+/* MAIN PAGE (FLEX-BOX)*/
 /******************************************************************************/
-#sectionBackground{
-    position:absolute;
-    top: 0;
+.grid{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 5vh 5vh 55vh 5vh 5vh;
+    /*DEBD83*/
+}
+
+.left{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.right{
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    background-color:#EEE;
+    border-left: 1px solid #DEBD83;
+}
+
+.top-right{
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-left: 1px solid #DEBD83;
+}
+
+.bottom-right{
+    grid-column-start: 2;
+    grid-column-end: end;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    border-left: 1px solid #DEBD83;
+}
+
+.divider{
+    position: absolute;
     left: 0;
-    padding: 0;
+    right: 0;
+    margin: 0 auto;
 }
 
-.sectionName{
-    background-image: url("../img/page/about.png");
-    position:absolute;
-    background-size: cover;
-    left: 50%;
-    top: 50%;
-    margin-left: -550px;
-    margin-top: -120px;
-    width: 1100px;
-    height: 241px; 
-}
-
-.sectionDivider{
-    background-image: url("../img/page/goldBar.png");
-    background-size: cover;
-    position:absolute;
+.content-one{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 100%;
-    width: 100%;
 }
 
-.section{
-    background-color: transparent;
+.content-one img{
+    width: 50%;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
