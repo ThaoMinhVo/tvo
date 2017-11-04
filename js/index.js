@@ -9,6 +9,11 @@ var state, scroll;
 
 $(document).ready(function(){
     state = 1;
+    $('#l-two').hide();
+    $('#l-three').hide();
+    $('#r-two').hide();
+    $('#r-three').hide();
+    
     scroll = false;
     /*var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
         obtH = new Vivus('hsvg', {type: 'sync', duration: 100}),
@@ -187,52 +192,159 @@ var isChrome = !!window.chrome && !!window.chrome.webstore;
 var isBlink = (isChrome || isOpera) && !!window.CSS;
 
 
-/*// Firefox or IE 11
+// Firefox or IE 11
 if(isFirefox || isIE) {
     var lastScrollTop = 0;
         $(document).unbind('mousewheel DOMMouseScroll').on('mousewheel DOMMouseScroll', function(evt) {
             var delta = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
 
             if (delta < 0) {
-                console.log('Up 1');
+                console.log('Down');
+                if (state != 3) {
+                    switch (state){
+                        case 1:
+                            hideOne();
+                            showTwo();
+                            break;
+                        case 2:
+                            hideTwo();
+                            showThree();
+                            break;
+                    }
+                    state += 1;
+                    console.log(state);
+                }
             } else {
-                console.log('Down 1');
+                console.log('Up');
+                if (state != 1) {
+                    switch (state){
+                        case 2:
+                            hideTwo();
+                            showOne();
+                            break;
+                        case 3:
+                            hideThree();
+                            showTwo();
+                            break;
+                    }
+                    state -= 1;
+                    console.log(state);
+                }
             }
         });
 }
 // Other browsers
 else {
     $('body').on('mousewheel', function(e){
-        if(e.originalEvent.wheelDelta > 0) {
-            console.log('Up Other');
-        }
-        else if(e.originalEvent.wheelDelta < 0) {
+        if(e.originalEvent.wheelDelta < 0) {
             console.log('Down Other');
+            if (state != 3) {
+                switch (state){
+                    case 1:
+                        hideOne();
+                        showTwo();
+                        break;
+                    case 2:
+                        hideTwo();
+                        showThree();
+                        break;
+                }
+                state += 1;
+                console.log(state);
+            }
+        }
+        else if(e.originalEvent.wheelDelta > 0) {
+            console.log('Up Other');
+            if (state != 1) {
+                switch (state){
+                    case 2:
+                        hideTwo();
+                        showOne();
+                        break;
+                    case 3:
+                        hideThree();
+                        showTwo();
+                        break;
+                }
+                state -= 1;
+                console.log(state);
+            }
         }
     });
-}*/
+}
 
 
-window.addEventListener('wheel', function(event){
-    if(scroll){
-        if(event.deltaY < 0){
-            console.log('up');
-            //change state of page
-            if(state > 0){
-                state -= 1;
-                changeState(state);
-            }
-        }else {
-            console.log('down');
-            //change state of page
-        }
-    }
-        
-});
+function hideOne(){
+    $('#l-one').removeClass('fadeInDownBig');
+    $('#l-one').addClass('fadeOutDownBig');
+    $('#r-one').removeClass('fadeInUpBig');
+    $('#r-one').addClass('fadeOutUpBig');
+    
+    setTimeout(function(){
+        $('#l-one').hide();
+        $('#r-one').hide();
+    }, 500);
+}
 
+function showOne(){
+    $('#l-one').removeClass('fadeOutDownBig');
+    $('#l-one').addClass('fadeInDownBig');
+    $('#r-one').removeClass('fadeOutUpBig');
+    $('#r-one').addClass('fadeInUpBig');
+    
+    setTimeout(function(){
+        $('#l-one').show();
+        $('#r-one').show();
+    }, 500);
+}
 
+function hideTwo(){
+    $('#l-two').removeClass('fadeInDownBig');
+    $('#l-two').addClass('fadeOutDownBig');
+    $('#r-two').removeClass('fadeInUpBig');
+    $('#r-two').addClass('fadeOutUpBig');
+    
+    setTimeout(function(){
+        $('#l-two').hide();
+        $('#r-two').hide();
+    }, 500);
+}
 
+function showTwo(){
+    $('#l-two').removeClass('fadeOutDownBig');
+    $('#l-two').addClass('fadeInDownBig');
+    $('#r-two').removeClass('fadeOutUpBig');
+    $('#r-two').addClass('fadeInUpBig');
+    
+    setTimeout(function(){
+        $('#l-two').show();
+        $('#r-two').show();
+    }, 500);
+}
 
+function hideThree(){
+    $('#l-three').removeClass('fadeInDownBig');
+    $('#l-three').addClass('fadeOutDownBig');
+    $('#r-three').removeClass('fadeInUpBig');
+    $('#r-three').addClass('fadeOutUpBig');
+    
+    setTimeout(function(){
+        $('#l-three').hide();
+        $('#r-three').hide();
+    }, 500);
+}
+
+function showThree(){
+    $('#l-three').removeClass('fadeOutDownBig');
+    $('#l-three').addClass('fadeInDownBig');
+    $('#r-three').removeClass('fadeOutUpBig');
+    $('#r-three').addClass('fadeInUpBig');
+    
+    setTimeout(function(){
+        $('#l-three').show();
+        $('#r-three').show();
+    }, 500);
+}
 
 
 

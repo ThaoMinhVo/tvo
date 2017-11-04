@@ -1,5 +1,6 @@
 /*font for typing effect*/
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
+@import url('https://fonts.googleapis.com/css?family=Antic+Didone');
 
 /*************************/
 /* GENERAL/UNIVERSAL*/
@@ -174,20 +175,22 @@ path {
 /******************************************************************************/
 /* NAVIGATION */
 /******************************************************************************/
-.navbar-toggleable-md .navbar-nav{
-    display: flex;
-    align-items:flex-end;
-    justify-content: center;
-    padding-left: 70%;
-}
 
 .navbar-toggleable-md .navbar-nav .nav-link{
     width: 25%;
     color: #AAA;
 }
 
+.navbar-toggleable-md .navbar-nav .nav-link:hover{
+    color: #888;
+}
+
 .navbar-inverse .navbar-nav .active>.nav-link, .navbar-inverse .navbar-nav .nav-link.active, .navbar-inverse .navbar-nav .nav-link.open, .navbar-inverse .navbar-nav .open>.nav-link{
     color: #CD9C43;
+}
+
+.navbar-inverse .navbar-nav .active>.nav-link:hover, .navbar-inverse .navbar-nav .nav-link.active:hover, .navbar-inverse .navbar-nav .nav-link.open:hover, .navbar-inverse .navbar-nav .open>.nav-link:hover{
+    color: #a37b35;
 }
 
 #toggleBtn{
@@ -220,7 +223,7 @@ path {
     grid-column-end: end;
     grid-row-start: 3;
     grid-row-end: 4;
-    background-color:#EEE;
+    background-color:#eee;
     border-left: 1px solid #DEBD83;
 }
 
@@ -247,15 +250,89 @@ path {
     margin: 0 auto;
 }
 
-.content-one{
+
+/********************************/
+/* Content */
+/********************************/
+
+.content{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
-.content-one img{
+.content h1,
+.content h2,
+.content h3{
+    font-family: 'Antic Didone', serif;
+}
+
+.content img{
     width: 50%;
+}
+
+.right-one div{
+    width: 70%;
+    color: #666;
+}
+
+.left-two div{
+    width: 70%;
+    color: #666;
+    text-align: right;
+}
+
+.workbox-grid{
+    padding: 50px;
+    display: grid;
+    width: 100%;
+    height: 100%;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+}
+
+.work-a{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #111;
+}
+.work-b{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #222;
+}
+.work-c{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    background-color: #333;
+}
+.work-d{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: #444;
+}
+.work-e{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: #555;
+}   
+.work-f{
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    background-color: #666;
 }
 
 
