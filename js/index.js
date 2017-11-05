@@ -5,29 +5,32 @@
 2 = skills
 3 = work
 */
-var state, scroll;
+var state, down;
 
 $(document).ready(function(){
     state = 1;
+    done = true;
+    down = false;
+    
     $('#l-two').hide();
     $('#l-three').hide();
     $('#r-two').hide();
     $('#r-three').hide();
     
-    scroll = false;
-    /*var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
+    var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
         obtH = new Vivus('hsvg', {type: 'sync', duration: 100}),
         obtA = new Vivus('asvg', {type: 'sync', duration: 100}),
         obtO = new Vivus('osvg', {type: 'sync', duration: 100}),
         obtV = new Vivus('vsvg', {type: 'sync', duration: 100}),
-        obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});*/
+        obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});
     
-    //$('.object').velocity("transition.flipXIn");
+    $('.object').velocity("transition.flipXIn");
     
-    // called after the animation completes
-    //obtO.play(function() {introAnimation();});
+    //called after the animation completes
+    obtO.play(function() {introAnimation();});
 
-    introAnimation();
+    //introAnimation();
+    checkScroll();
 });
 
 //halts all animation and get to main webpage
@@ -36,7 +39,7 @@ function skipIntro(){};
 //timeline of animation calls
 function introAnimation(){
     //without function() the timmer doesn't work
-    /*setTimeout(expandName, 500);
+    setTimeout(expandName, 500);
     setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
     setTimeout(activateFloral, 3000);
     setTimeout(activateFloralColors, 4000);
@@ -46,9 +49,8 @@ function introAnimation(){
     setTimeout(translateLogo, 8000);
     setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
     
-    setTimeout(loadBackground, 10000);*/
-    $('.animationOverlay').hide();
-    //loadBackground();
+    setTimeout(loadBackground, 10000);
+    //$('.animationOverlay').hide();
 }
 
 function expandName(){
@@ -136,35 +138,6 @@ function translateLogo(){
     });
 }
 
-function loadBackground(){
-    //find height and width of viewport (not screen)
-    var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-    var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-    console.log('width: ' + w + ' | height: ' + h);
-
-    //find hypotenuse and set as diameter/height/width of circle
-    var hypotenuse =  Math.ceil(Math.sqrt((w*w) + (h*h)));
-    $('#sectionBackground').css({'height': ''+hypotenuse+'px','width': ''+hypotenuse+'px'});
-    console.log('hypotenuse: ' + hypotenuse);
-    
-    //find offset of left and top margins
-    var minusLeft = (hypotenuse/2)-(w/2);
-    var minusTop = (hypotenuse/2)-(h/2);
-    $('#sectionBackground').css("margin-left", "-"+minusLeft+"px");
-    $('#sectionBackground').css("margin-top", "-"+minusTop+"px");
-    console.log('margin-left: -'+minusLeft);
-    console.log('margin-top: -'+minusTop);
-    
-    //find tan-1(0) = (width/2)/(height/2) and convert to degrees
-    var degrees = Math.ceil(Math.atan((w/2)/(h/2))*180/Math.PI);
-    console.log('degrees: '+degrees);
-    
-    $('.sectionDivider').velocity({rotateZ: degrees+"deg",},1000);
-    //$('.sectionName').css('background-image', 'url("img/page/about.png")');
-
-    scroll = true;
-}
-
 /***********************************************
  AFTER ALL ANIMATION AND SITE IS READY TO READ 
  ***********************************************/
@@ -199,36 +172,19 @@ if(isFirefox || isIE) {
             var delta = evt.detail < 0 || evt.wheelDelta > 0 ? 1 : -1;
 
             if (delta < 0) {
-                console.log('Down');
-                if (state != 3) {
-                    switch (state){
-                        case 1:
-                            hideOne();
-                            showTwo();
-                            break;
-                        case 2:
-                            hideTwo();
-                            showThree();
-                            break;
-                    }
-                    state += 1;
-                    console.log(state);
+                if(done){
+                    console.log('Down');
+                    done = false;
+                    down = true;
+                    checkScroll();
                 }
+                
             } else {
-                console.log('Up');
-                if (state != 1) {
-                    switch (state){
-                        case 2:
-                            hideTwo();
-                            showOne();
-                            break;
-                        case 3:
-                            hideThree();
-                            showTwo();
-                            break;
-                    }
-                    state -= 1;
-                    console.log(state);
+                if(done){
+                    console.log('Up');
+                    done = false;
+                    down = false;
+                    checkScroll();
                 }
             }
         });
@@ -237,42 +193,69 @@ if(isFirefox || isIE) {
 else {
     $('body').on('mousewheel', function(e){
         if(e.originalEvent.wheelDelta < 0) {
-            console.log('Down Other');
-            if (state != 3) {
-                switch (state){
-                    case 1:
-                        hideOne();
-                        showTwo();
-                        break;
-                    case 2:
-                        hideTwo();
-                        showThree();
-                        break;
-                }
-                state += 1;
-                console.log(state);
+            if(done){
+                console.log('Down Other');
+                done = false;
+                down = true;
+                checkScroll();
             }
         }
         else if(e.originalEvent.wheelDelta > 0) {
-            console.log('Up Other');
-            if (state != 1) {
-                switch (state){
-                    case 2:
-                        hideTwo();
-                        showOne();
-                        break;
-                    case 3:
-                        hideThree();
-                        showTwo();
-                        break;
-                }
-                state -= 1;
-                console.log(state);
+            if(done){
+                console.log('Up Other');
+                done = false;
+                down = false;
+                checkScroll();
             }
         }
     });
 }
 
+function checkScroll(){
+    //setInterval(function(){
+        if (down === true) {
+            console.log('Down');
+            down = null;
+            if (state != 3) {
+                switch (state){
+                case 1:
+                    hideOne();
+                    showTwo();
+                    break;
+                case 2:
+                    hideTwo();
+                    showThree();
+                    break;
+                }
+                state += 1;
+                console.log(state);
+            }
+            setTimeout(function(){
+                done = true;
+            }, 2000);
+        } else if (down === false){
+            console.log('Up');
+            down = null;
+            if (state != 1) {
+                switch (state){
+                case 2:
+                    hideTwo();
+                    showOne();
+                    break;
+                case 3:
+                    hideThree();
+                    showTwo();
+                    break;
+                }
+                state -= 1;
+                console.log(state);
+            }
+            setTimeout(function(){
+                done = true;
+            }, 2000);
+        }
+    //},2000);
+}
 
 function hideOne(){
     $('#l-one').removeClass('fadeInDownBig');
