@@ -1,7 +1,7 @@
 /*font for typing effect*/
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro');
-@import url('https://fonts.googleapis.com/css?family=Antic+Didone');
-
+/*@import url('https://fonts.googleapis.com/css?family=Antic+Didone');*/
+@import url('https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,400i');
 /*************************/
 /* GENERAL/UNIVERSAL*/
 /*************************/
@@ -156,7 +156,7 @@ path {
     top: 50vh;
     left: 50vw;
     margin-left: -610px;
-    margin-top: -350px;
+    margin-top: -300px;
 }
 
 /**************************************/
@@ -265,16 +265,29 @@ path {
 .content h1,
 .content h2,
 .content h3{
-    font-family: 'Antic Didone', serif;
+/*    font-family: 'Antic Didone', serif;*/
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.content h2{
+    margin-bottom: 20px;
 }
 
 .content img{
     width: 50%;
 }
 
+.content p{
+    font-size: 18px;
+}
+
+.content p span{
+    color: #666;
+}
+
 .right-one div{
     width: 70%;
-    color: #666;
+    color: #AAA;
 }
 
 .left-two div{

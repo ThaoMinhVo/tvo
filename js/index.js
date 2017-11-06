@@ -17,19 +17,19 @@ $(document).ready(function(){
     $('#r-two').hide();
     $('#r-three').hide();
     
-    var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
-        obtH = new Vivus('hsvg', {type: 'sync', duration: 100}),
-        obtA = new Vivus('asvg', {type: 'sync', duration: 100}),
-        obtO = new Vivus('osvg', {type: 'sync', duration: 100}),
-        obtV = new Vivus('vsvg', {type: 'sync', duration: 100}),
-        obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});
-    
-    $('.object').velocity("transition.flipXIn");
-    
-    //called after the animation completes
-    obtO.play(function() {introAnimation();});
+//    var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
+//        obtH = new Vivus('hsvg', {type: 'sync', duration: 100}),
+//        obtA = new Vivus('asvg', {type: 'sync', duration: 100}),
+//        obtO = new Vivus('osvg', {type: 'sync', duration: 100}),
+//        obtV = new Vivus('vsvg', {type: 'sync', duration: 100}),
+//        obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});
+//    
+//    $('.object').velocity("transition.flipXIn");
+//    
+//    //called after the animation completes
+//    obtO.play(function() {introAnimation();});
 
-    //introAnimation();
+    introAnimation();
     checkScroll();
 });
 
@@ -39,44 +39,37 @@ function skipIntro(){};
 //timeline of animation calls
 function introAnimation(){
     //without function() the timmer doesn't work
-    setTimeout(expandName, 500);
-    setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
-    setTimeout(activateFloral, 3000);
-    setTimeout(activateFloralColors, 4000);
-    setTimeout(function(){$('#floralOutline').velocity("fadeOut", { duration: 1500 });}, 4500);
-    setTimeout(function(){$('#floralColors').velocity("fadeOut",{ duration: 1500 }); $('#typeDeveloper').velocity("fadeOut",{ duration: 1500 });}, 6500);
-    setTimeout(collapseName, 8000);
-    setTimeout(translateLogo, 8000);
-    setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
-    
-    setTimeout(loadBackground, 10000);
-    //$('.animationOverlay').hide();
+//    setTimeout(expandName, 500);
+//    setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
+//    setTimeout(activateFloral, 3000);
+//    setTimeout(activateFloralColors, 4000);
+//    setTimeout(function(){$('#floralOutline').velocity("fadeOut", { duration: 1500 });}, 4500);
+//    setTimeout(function(){$('#floralColors').velocity("fadeOut",{ duration: 1500 }); $('#typeDeveloper').velocity("fadeOut",{ duration: 1500 });}, 6500);
+//    setTimeout(collapseName, 8000);
+//    setTimeout(translateLogo, 8000);
+//    setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
+//    
+    $('.animationOverlay').hide();
 }
 
 function expandName(){
     $('#T').velocity({
-        left: '-=260px',
-        top: '-=50px'
+        left: '-=260px'
     });
     $('#H').velocity({
-        left: '-=150px',
-        top: '-=50px'
+        left: '-=150px'
     });
     $('#A').velocity({
-        left: '-=85px',
-        top: '-=50px'
+        left: '-=85px'
     });
     $('#O').velocity({
-        left: '+=10px',
-        top: '-=50px'
+        left: '+=10px'
     });
     $('#V').velocity({
-        left: '+=150px',
-        top: '-=50px'
+        left: '+=150px'
     });
     $('#O_last').velocity({
-        left: '+=255px',
-        top: '-=50px'
+        left: '+=255px'
     });
 }
 
