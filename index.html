@@ -464,20 +464,26 @@
                 </nav>
             </header>
             <main class="grid">
-                <div id="up" class="upArrow arrow"></div>
-                <div id="down" class="downArrow arrow"></div>
+                <div id="up" class="upArrow arrow" onclick="arrowChangeState('up')"></div>
+                <div id="down" class="downArrow arrow" onclick="arrowChangeState('down')"></div>
                 <div class="left">
                     <div id="l-one" class="content left-one animated fadeInDownBig">
                         <img src="img/page/about.png"/>
                     </div>
                     <div id="l-two" class="content left-two animated">
-                        <div>
-                            <h3>Development</h3>
-                            <span>One </span><span>Two </span><span>Three </span>
-                            <h3>Design</h3>
-                            <span>Four </span><span>Five </span><span>Six </span>
-                            <h3>Other</h3>
-                            <span>Seven </span>
+                        <div class="skillsContent">
+                            <div class="skillGroup">
+                                <h4>Development</h4>
+                                <span>HTML5 </span><span>CSS3 </span><span>Javscript: jQuery </span>
+                            </div>
+                            <div class="skillGroup">
+                                <h4>Design</h4>
+                                <span>Illustrator </span><span>InDesign </span><span>Photoshop </span><span>Lightroom </span>
+                            </div>
+                            <div class="skillGroup skillGroup_last">
+                                <h4>Other</h4>
+                                <span>Bootstrap </span><span>Media Queries </span><span>Git </span>
+                            </div>
                         </div>
                     </div>
                     <div id="l-three" class="content left-three animated">

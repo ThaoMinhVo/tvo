@@ -251,16 +251,19 @@ path {
     position: absolute;
     left: 50%;
     margin-left: -25px;
+    z-index: 1000;
 }
 
 .upArrow{
     top: 0px;
     background-image: url("../img/page/upArrow.png");
+    cursor:pointer;
 }
 
 .downArrow{
     bottom: 0px;
     background-image: url("../img/page/downArrow.png");
+    cursor:pointer;
 }
 
 .grid{
@@ -323,12 +326,18 @@ path {
 
 .left-two,
 .right-three{
-    background-color: #EEE;
+    background-color: #B5D9D6;
+}
+
+.right-one {
+    background-image: url(../img/page/quotes.png);
+    background-size: cover;
 }
 
 .content h1,
 .content h2,
-.content h3{
+.content h3,
+.content h4{
 /*    font-family: 'Antic Didone', serif;*/
     font-family: 'Cormorant Garamond', serif;
 }
@@ -351,16 +360,45 @@ path {
     color: #555;
 }
 
-.right-one div{
+.right-one > div{
     width: 70%;
     color: #AAA;
 }
 
-.left-two div{
+.left-two > div{
     width: 70%;
     color: #666;
     text-align: right;
 }
+
+/********************************/
+/* SKILLS CONTENT */
+/********************************/
+
+.skillsContent h4{
+    border-bottom: 1px dashed #68A19C;
+    color: #68A19C;
+}
+
+.skillGroup{
+    margin-bottom: 20px;
+}
+
+.skillGroup_last{
+    margin-bottom: 0px;
+}
+
+.skillGroup span{
+    margin: 0 0px 5px 5px;
+/*    border: 1.5px dotted #FFF;*/
+    padding: 0 0px 10px 10px;
+    display: inline-block;
+    border-radius: 10px;
+}
+
+/********************************/
+/* WORK CONTENT */
+/********************************/
 
 .workbox-grid{
     padding: 50px;

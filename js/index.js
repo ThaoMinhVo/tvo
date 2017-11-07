@@ -162,6 +162,19 @@ function translateLogo(){
     }
 }
 
+function arrowChangeState(direction){
+    if(done){
+        done = false;
+        if (direction == 'down'){
+            down = true;
+        }else {
+            down =false;
+        }
+        
+        checkScroll();
+    }
+}
+
 /***********************************************
  NAVIGATION JUMP
  ***********************************************/
