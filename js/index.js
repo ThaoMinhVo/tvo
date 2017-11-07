@@ -5,99 +5,110 @@
 2 = skills
 3 = work
 */
-var state, down;
+var state, done, down, animate;
 
 $(document).ready(function(){
     state = 1;
     done = true;
     down = false;
+    animate = true;
     
+    $('#l-one').hide();
+    $('#r-one').hide()
     $('#l-two').hide();
-    $('#l-three').hide();
     $('#r-two').hide();
+    $('#l-three').hide();
     $('#r-three').hide();
     
-//    var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
-//        obtH = new Vivus('hsvg', {type: 'sync', duration: 100}),
-//        obtA = new Vivus('asvg', {type: 'sync', duration: 100}),
-//        obtO = new Vivus('osvg', {type: 'sync', duration: 100}),
-//        obtV = new Vivus('vsvg', {type: 'sync', duration: 100}),
-//        obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});
-//    
-//    $('.object').velocity("transition.flipXIn");
-//    
-//    //called after the animation completes
-//    obtO.play(function() {introAnimation();});
+    
+    var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
+        obtH = new Vivus('hsvg', {type: 'sync', duration: 100}),
+        obtA = new Vivus('asvg', {type: 'sync', duration: 100}),
+        obtO = new Vivus('osvg', {type: 'sync', duration: 100}),
+        obtV = new Vivus('vsvg', {type: 'sync', duration: 100}),
+        obtO_last = new Vivus('osvg_last', {type: 'sync', duration: 100});
+    
+    //called after the animation completes
+    obtO.play(function() {introAnimation();});
 
-    introAnimation();
+    //introAnimation();
     checkScroll();
 });
 
 //halts all animation and get to main webpage
-function skipIntro(){};
+function skipAnimation(){
+    $(".velocity-animating").velocity("stop", true);
+    animate = false;
+    $('.animationOverlay').velocity("fadeOut",{ duration: 1500 });
+    setTimeout(function(){showOne();}, 1000);
+}
 
 //timeline of animation calls
 function introAnimation(){
     //without function() the timmer doesn't work
-//    setTimeout(expandName, 500);
-//    setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
-//    setTimeout(activateFloral, 3000);
-//    setTimeout(activateFloralColors, 4000);
-//    setTimeout(function(){$('#floralOutline').velocity("fadeOut", { duration: 1500 });}, 4500);
-//    setTimeout(function(){$('#floralColors').velocity("fadeOut",{ duration: 1500 }); $('#typeDeveloper').velocity("fadeOut",{ duration: 1500 });}, 6500);
-//    setTimeout(collapseName, 8000);
-//    setTimeout(translateLogo, 8000);
-//    setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
-//    
-    $('.animationOverlay').hide();
+    setTimeout(expandName, 500);
+    setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
+    setTimeout(activateFloral, 3000);
+    setTimeout(activateFloralColors, 4000);
+    setTimeout(function(){$('#floralOutline').velocity("fadeOut", { duration: 1500 });}, 4500);
+    setTimeout(function(){$('#floralColors').velocity("fadeOut",{ duration: 1500 }); $('#typeDeveloper').velocity("fadeOut",{ duration: 1500 });}, 6500);
+    setTimeout(collapseName, 8000);
+    setTimeout(translateLogo, 8000);
+    setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
+    setTimeout(function(){if(animate){showOne();}}, 9500);
+    //$('.animationOverlay').hide();
 }
 
 function expandName(){
-    $('#T').velocity({
+    if(animate){
+        $('#T').velocity({
         left: '-=260px'
-    });
-    $('#H').velocity({
-        left: '-=150px'
-    });
-    $('#A').velocity({
-        left: '-=85px'
-    });
-    $('#O').velocity({
-        left: '+=10px'
-    });
-    $('#V').velocity({
-        left: '+=150px'
-    });
-    $('#O_last').velocity({
-        left: '+=255px'
-    });
+        });
+        $('#H').velocity({
+            left: '-=150px'
+        });
+        $('#A').velocity({
+            left: '-=85px'
+        });
+        $('#O').velocity({
+            left: '+=10px'
+        });
+        $('#V').velocity({
+            left: '+=150px'
+        });
+        $('#O_last').velocity({
+            left: '+=255px'
+        });
+    }
 }
 
 function collapseName(){
-    $('#T').velocity({
-        left: '+=260px',
-        top: '+=50px'
-    });
-    $('#H').velocity({
-        left: '+=150px',
-        top: '+=50px'
-    });
-    $('#A').velocity({
-        left: '+=85px',
-        top: '+=50px'
-    });
-    $('#O').velocity({
-        left: '-=10px',
-        top: '+=50px'
-    });
-    $('#V').velocity({
-        left: '-=150px',
-        top: '+=50px'
-    });
-    $('#O_last').velocity({
-        left: '-=255px',
-        top: '+=50px'
-    });
+    if(animate){
+        $('#T').velocity({
+            left: '+=260px',
+            top: '+=50px'
+        });
+        $('#H').velocity({
+            left: '+=150px',
+            top: '+=50px'
+        });
+        $('#A').velocity({
+            left: '+=85px',
+            top: '+=50px'
+        });
+        $('#O').velocity({
+            left: '-=10px',
+            top: '+=50px'
+        });
+        $('#V').velocity({
+            left: '-=150px',
+            top: '+=50px'
+        });
+        $('#O_last').velocity({
+            left: '-=255px',
+            top: '+=50px'
+        });
+    }
 }
 
 /*used to activate all typewriting text on page and delete blink-caret at end of animation
@@ -106,30 +117,71 @@ className  - class to add to container element
 textElement - element of text (span,div,h1, etc)
 time - duration of animation in milliseconds so know when to stop blink-caret*/
 function activateTypewriter(idName, className, textElement, time){
-    $('#'+idName).addClass(className);
+    if(animate){
+        $('#'+idName).addClass(className);
     setTimeout(function(){$('.'+ className + ' ' + textElement).css('border-right', 'none');}, (time+500));
+    }
 }
 
 /*Floral Outline*/
 function activateFloral(){
-    $('#floralOutline').show();
-    var floralOutline = new Vivus('floralOutline', {type: 'sync', duration: 100});
+    if(animate){
+        $('#floralOutline').show();
+        var floralOutline = new Vivus('floralOutline', {type: 'sync', duration: 100});
+    }
 }
 
 function activateFloralColors(){
-    $('#floralColors').show();
-    $('#floralColors').velocity("fadeIn", { duration: 1500 });
+    if(animate){
+        $('#floralColors').show();
+        $('#floralColors').velocity("fadeIn", { duration: 1500 });
+    }
 }
 
 /*Moves logo to the top left hand corner*/
 function translateLogo(){
     //if screen is bigger than 1200
-    $('.object').velocity({
-        left: '106px',
-        top: '90px',
-        width: '70px'
-    });
+    if(animate){
+       $('.object').velocity({
+            left: '106px',
+            top: '90px',
+            width: '70px'
+        });
+    }
 }
+
+/***********************************************
+ NAVIGATION JUMP
+ ***********************************************/
+function navTo(newState){
+    if(state != newState){
+        switch (state){
+            case 1:
+                hideOne();
+                break;
+            case 2:
+                hideTwo();
+                break;
+            case 3:
+                hideThree();
+                break;
+        }
+         switch (newState){
+            case 1:
+                showOne();
+                break;
+            case 2:
+                showTwo();
+                break;
+            case 3:
+                showThree();
+                break;
+        }
+    }
+    
+    state = newState;
+}
+
 
 /***********************************************
  AFTER ALL ANIMATION AND SITE IS READY TO READ 
@@ -256,6 +308,8 @@ function hideOne(){
     $('#r-one').removeClass('fadeInUpBig');
     $('#r-one').addClass('fadeOutUpBig');
     
+    $('#navOne').removeClass('active');
+    
     setTimeout(function(){
         $('#l-one').hide();
         $('#r-one').hide();
@@ -267,6 +321,8 @@ function showOne(){
     $('#l-one').addClass('fadeInDownBig');
     $('#r-one').removeClass('fadeOutUpBig');
     $('#r-one').addClass('fadeInUpBig');
+    
+    $('#navOne').addClass('active');
     
     setTimeout(function(){
         $('#l-one').show();
@@ -280,6 +336,8 @@ function hideTwo(){
     $('#r-two').removeClass('fadeInUpBig');
     $('#r-two').addClass('fadeOutUpBig');
     
+    $('#navTwo').removeClass('active');
+    
     setTimeout(function(){
         $('#l-two').hide();
         $('#r-two').hide();
@@ -291,6 +349,8 @@ function showTwo(){
     $('#l-two').addClass('fadeInDownBig');
     $('#r-two').removeClass('fadeOutUpBig');
     $('#r-two').addClass('fadeInUpBig');
+    
+    $('#navTwo').addClass('active');
     
     setTimeout(function(){
         $('#l-two').show();
@@ -304,6 +364,8 @@ function hideThree(){
     $('#r-three').removeClass('fadeInUpBig');
     $('#r-three').addClass('fadeOutUpBig');
     
+    $('#navThree').removeClass('active');
+    
     setTimeout(function(){
         $('#l-three').hide();
         $('#r-three').hide();
@@ -315,6 +377,8 @@ function showThree(){
     $('#l-three').addClass('fadeInDownBig');
     $('#r-three').removeClass('fadeOutUpBig');
     $('#r-three').addClass('fadeInUpBig');
+    
+    $('#navThree').addClass('active');
     
     setTimeout(function(){
         $('#l-three').show();

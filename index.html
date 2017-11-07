@@ -11,8 +11,9 @@
     </head>
     <body class="stop-scrolling">
         <div class="animationOverlay">
+            <button class="skip button" type="button" onclick="skipAnimation()">skip</button>
             <div class="animationContainer">
-                <div id="navContainer" class="container navContainer">
+                <div id="nameContainer" class="container">
                     <div id="typeDeveloper" class="">
                         <span>Developer + Designer</span>
                     </div>
@@ -291,6 +292,7 @@
                     <img id="floralColors" src="img/floralDesign.png" class="floralPlacement">
                 </div>
             </div>
+            
         </div>
         <div class="container">
             <header>
@@ -303,17 +305,17 @@
                     </a>
                     <div class="collapse navbar-collapse" id="mainNavToggler">
                         <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">About <span class="sr-only">(current)</span></a>
+                            <li id="navOne" class="nav-item active">
+                                <a class="nav-link" onclick="navTo(1)">About <span class="sr-only">(current)</span></a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Skills</a>
+                            <li id="navTwo" class="nav-item">
+                                <a class="nav-link" onclick="navTo(2)">Skills</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Work</a>
+                            <li id="navThree" class="nav-item">
+                                <a class="nav-link" onclick="navTo(3)">Work</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Resume</a>
+                            <li id="navFour" class="nav-item">
+                                <a class="nav-link resume-link" href="doc/tvo-resume.pdf" target="_blank">Resume</a>
                             </li>
                         </ul>
                     </div>

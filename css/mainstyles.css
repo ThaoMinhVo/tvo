@@ -41,6 +41,23 @@ positionRelative{
     justify-content: center;
 }
 
+.button{
+    border: 1px solid #AAA;
+    box-shadow: 1px 1px 2px #999;
+    padding: 10px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*font-family: 'Antic Didone', serif;*/
+    font-family: 'Cormorant Garamond', serif;
+    background: none;
+    text-transform: lowercase;
+    cursor: pointer;
+    
+}
+
+
 /******************************************************************************/
 /* BEGINNING ANIMATION BLOCK */
 /******************************************************************************/
@@ -131,7 +148,8 @@ path {
 .typeDeveloper span{
     color: #AAA;
     width: 225px;
-    font-family: 'Source Code Pro', monospace;
+/*    font-family: 'Source Code Pro', monospace;*/
+    font-family: 'Cormorant Garamond', serif;
     overflow: hidden; /*Hides content until animation shows it*/
     border-right: .1em solid #AAA; /*blink-caret*/
     white-space:nowrap; /*content on single line*/
@@ -160,29 +178,40 @@ path {
 }
 
 /**************************************/
-/* 3D ANIMATION */
-/*Currently not in use*/
+/* SKIP ANIMATION */
 /**************************************/
-.dot{
-    width: 20px;
-	height: 20px;
-	background: #D6B16F;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
-	border-radius: 10px;
+.skip{
+    position: absolute;
+    left: 50vw;
+    top: 80vh;
+    margin-left: -75px;
+    width: 150px;
+    color: #AAA;
+    border: none;
+    box-shadow: none;
 }
+
+
 
 /******************************************************************************/
 /* NAVIGATION */
 /******************************************************************************/
 
 .navbar-toggleable-md .navbar-nav .nav-link{
-    width: 25%;
     color: #AAA;
+}
+
+.resume-link{
+    color: #AAA !important;
+}
+
+.resume-link:hover{
+    color: #CD9C43 !important;
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link:hover{
     color: #888;
+    cursor:pointer;
 }
 
 .navbar-inverse .navbar-nav .active>.nav-link, .navbar-inverse .navbar-nav .nav-link.active, .navbar-inverse .navbar-nav .nav-link.open, .navbar-inverse .navbar-nav .open>.nav-link{
@@ -223,7 +252,6 @@ path {
     grid-column-end: end;
     grid-row-start: 3;
     grid-row-end: 4;
-    background-color:#eee;
     border-left: 1px solid #DEBD83;
 }
 
@@ -262,6 +290,11 @@ path {
     height: 100%;
 }
 
+.left-two,
+.right-three{
+    background-color: #EEE;
+}
+
 .content h1,
 .content h2,
 .content h3{
@@ -279,10 +312,12 @@ path {
 
 .content p{
     font-size: 18px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 30px;
 }
 
 .content p span{
-    color: #666;
+    color: #555;
 }
 
 .right-one div{
