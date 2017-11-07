@@ -78,7 +78,8 @@ positionRelative{
     z-index: 1000;
 }*/
 
-.animationContainer{
+.animationContainer,
+#nameContainer{
     position:relative;
 }
 
@@ -137,15 +138,16 @@ path {
 .typeDeveloper{
     display: flex;
     justify-content: center;
-    width: 225px;
+    width: 120px;
     position:absolute;
     top:50vh;
     left: 50%;
-    margin-left: -108px;
+    margin-left: -130px;
     margin-top: -170px;
 }
 
 .typeDeveloper span{
+    font-size: 20px;
     color: #AAA;
     width: 225px;
 /*    font-family: 'Source Code Pro', monospace;*/
@@ -156,7 +158,7 @@ path {
     margin: 0 auto; /*scrolling effect while typing happens*/
     letter-spacing: .1em; 
     animation: 
-        typing 1.5s steps(20, end),
+        typing 1.5s steps(10, end),
         blink-caret .5s step-end 4;
 }
 
@@ -164,8 +166,17 @@ path {
 /* FLORAL DESIGN */ 
 /**************************************/
 #floralOutline,
-#floralColors{
+#floralColors,
+#designerText{
     display:none;
+}
+
+.designerTextContainer{
+    position: absolute;
+    width: 175px;
+    top: 50vh;
+    left: 50%;
+    margin-top: -200px;
 }
 
 .floralPlacement{

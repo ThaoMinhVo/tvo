@@ -48,10 +48,12 @@ function introAnimation(){
     //without function() the timmer doesn't work
     setTimeout(expandName, 500);
     setTimeout(function(){activateTypewriter('typeDeveloper','typeDeveloper', 'span', 2000);}, 1000);
-    setTimeout(activateFloral, 3000);
-    setTimeout(activateFloralColors, 4000);
-    setTimeout(function(){$('#floralOutline').velocity("fadeOut", { duration: 1500 });}, 4500);
+    setTimeout(activateDesignerText, 4000);
+    //setTimeout(activateFloral, 3000);
+    //setTimeout(activateFloralColors, 4000);
+    //setTimeout(function(){$('#floralOutline').velocity("fadeOut", { duration: 1500 });}, 4500);
     setTimeout(function(){$('#floralColors').velocity("fadeOut",{ duration: 1500 }); $('#typeDeveloper').velocity("fadeOut",{ duration: 1500 });}, 6500);
+    setTimeout(function(){$('#designerText').velocity("fadeOut", { duration: 1500 });}, 6500);
     setTimeout(collapseName, 8000);
     setTimeout(translateLogo, 8000);
     setTimeout(function(){$('.animationOverlay').velocity("fadeOut",{ duration: 1500 });}, 9000);
@@ -120,6 +122,14 @@ function activateTypewriter(idName, className, textElement, time){
     if(animate){
         $('#'+idName).addClass(className);
     setTimeout(function(){$('.'+ className + ' ' + textElement).css('border-right', 'none');}, (time+500));
+    }
+}
+
+/*Designer Text Outline*/
+function activateDesignerText(){
+    if(animate){
+        $('#designerText').show();
+        var floralOutline = new Vivus('designerText', {type: 'oneByOne', duration: 100});
     }
 }
 
