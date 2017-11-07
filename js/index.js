@@ -13,6 +13,8 @@ $(document).ready(function(){
     down = false;
     animate = true;
     
+    $('#up').hide();
+    $('#down').hide()
     $('#l-one').hide();
     $('#r-one').hide()
     $('#l-two').hide();
@@ -334,6 +336,9 @@ function showOne(){
     
     $('#navOne').addClass('active');
     
+    $('#up').hide();
+    $('#down').show();
+    
     setTimeout(function(){
         $('#l-one').show();
         $('#r-one').show();
@@ -362,6 +367,9 @@ function showTwo(){
     
     $('#navTwo').addClass('active');
     
+    $('#up').show();
+    $('#down').show();
+    
     setTimeout(function(){
         $('#l-two').show();
         $('#r-two').show();
@@ -389,6 +397,9 @@ function showThree(){
     $('#r-three').addClass('fadeInUpBig');
     
     $('#navThree').addClass('active');
+    
+    $('#up').show();
+    $('#down').hide();
     
     setTimeout(function(){
         $('#l-three').show();
