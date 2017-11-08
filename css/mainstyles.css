@@ -217,7 +217,7 @@ path {
 }
 
 .resume-link:hover{
-    color: #CD9C43 !important;
+    color: #68A19C !important;
 }
 
 .navbar-toggleable-md .navbar-nav .nav-link:hover{
@@ -381,7 +381,7 @@ path {
 }
 
 .skillGroup{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .skillGroup_last{
@@ -389,8 +389,6 @@ path {
 }
 
 .skillGroup span{
-    margin: 0 0px 5px 5px;
-/*    border: 1.5px dotted #FFF;*/
     padding: 0 0px 10px 10px;
     display: inline-block;
     border-radius: 10px;
@@ -400,59 +398,21 @@ path {
 /* WORK CONTENT */
 /********************************/
 
-.workbox-grid{
-    padding: 50px;
-    display: grid;
-    width: 100%;
-    height: 100%;
-    grid-template-columns: 33% 33% 33%;
-    grid-template-rows: 33% 33% 33%;
+.workContainer{
+    width: 70%;
+    height:70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.work-a{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: #111;
+.work{
+    width: 32%;
+    height: 50%;
+    background-color: #FFF;
+    display: inline-block;
+    border: 5px solid #B5D9D6;
 }
-.work-b{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: #222;
-}
-.work-c{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    background-color: #333;
-}
-.work-d{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: #444;
-}
-.work-e{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: #555;
-}   
-.work-f{
-    grid-column-start: 3;
-    grid-column-end: 4;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    background-color: #666;
-}
-
-
 
 
 
