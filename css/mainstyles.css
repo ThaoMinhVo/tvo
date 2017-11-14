@@ -324,16 +324,6 @@ path {
     height: 100%;
 }
 
-.left-two,
-.right-three{
-    background-color: #B5D9D6;
-}
-
-.right-one {
-    background-image: url(../img/page/quotes.png);
-    background-size: cover;
-}
-
 .content h1,
 .content h2,
 .content h3,
@@ -360,15 +350,44 @@ path {
     color: #555;
 }
 
+.left-one,
+.right-one{
+    background-color: #F2F2F2;
+}
+
+.right-one {
+    background-image: url(../img/page/quotes.png);
+    background-repeat: no-repeat;
+    background-size: center;
+}
+
 .right-one > div{
     width: 70%;
     color: #AAA;
+}
+
+.left-two,
+.right-three{
+    background-color: #B5D9D6;
 }
 
 .left-two > div{
     width: 70%;
     color: #666;
     text-align: right;
+}
+
+.right-three > div{
+    width: 80%;
+    height:70%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.right-two,
+.left-three {
+    background-color: #F2F2F2;
 }
 
 /********************************/
@@ -398,20 +417,44 @@ path {
 /* WORK CONTENT */
 /********************************/
 
-.workContainer{
-    width: 70%;
-    height:70%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-}
-
 .work{
-    width: 32%;
+    width: 33%;
     height: 50%;
     background-color: #FFF;
     display: inline-block;
     border: 5px solid #B5D9D6;
+    border-radius: 50px;
+}
+
+.work .border{
+    background-color: #EFEFEF;
+    border: 10px solid #FFF;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 1px 1px 10px #71A7A2;
+    border-radius: 2px;
+}
+
+.work .details{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #FFF;
+    opacity: 0;
+}
+
+.work .details:hover{
+    opacity: 0.95;
+    cursor: pointer;
+}
+
+.work .smallImg{
+    height:100%;
+    width: auto;
 }
 
 
