@@ -21,6 +21,7 @@ $(document).ready(function(){
     $('#r-two').hide();
     $('#l-three').hide();
     $('#r-three').hide();
+    $('.lightboxContainer').hide();
     
     
     var obtT = new Vivus('tsvg', {type: 'sync', duration: 100}),
@@ -418,6 +419,27 @@ function showThree(){
         $('#l-three').show();
         $('#r-three').show();
     }, 500);
+}
+
+function lightboxShow(fileLocation){
+    $('.lightboxContainer').show();
+    $('.lightbox_img').css('background-image','url("'+fileLocation+'")');
+    $('#lightbox').show();
+    $('#lightbox').removeClass('zoomOut');
+    $('#lightbox').addClass('zoomIn');
+}
+
+function lightboxHide(){
+    $('#lightbox').removeClass('zoomIn');
+    $('#lightbox').addClass('zoomOut');
+    
+    setTimeout(function(){
+        $('.lightboxContainer').hide();
+        $('#lightbox').hide();
+    }, 500);
+    
+    
+    
 }
 
 

@@ -506,22 +506,17 @@
                         <div class="workContainer">
                             <div class="work work-a">
                                 <div class="border">
-                                    <img class="smallImg" src="img/work/sureco_small.png"/>
-                                    <div class="details" onclick="">
-                                        
-                                    </div>
+                                    <img class="smallImg" src="img/work/sureco_small.png" onclick="lightboxShow('img/work/sureco_large.png')"/>
                                 </div>
                             </div>
                             <div class="work work-b">
                                 <div class="border">
-                                    <img class="smallImg" src="img/work/health_small.png"/>
-                                    <div class="details"></div>
+                                    <img class="smallImg" src="img/work/health_small.png" onclick="lightboxShow('img/work/health_large.png')"/>
                                 </div>
                             </div>
                             <div class="work work-c">
                                 <div class="border">
-                                    <img class="smallImg" src="img/work/healthrive_small.png"/>
-                                    <div class="details"></div>
+                                    <img class="smallImg" src="img/work/healthrive_small.png" onclick="lightboxShow('img/work/healthrive_large.png')"/>
                                 </div>
                             </div>
                         </div>
@@ -530,6 +525,12 @@
                 <div class="bottom-right"></div>
             </main>
             <footer></footer>
+        </div>
+        <div class="lightboxContainer" onclick="lightboxHide();">
+            <div id="lightbox" class="animated">
+                <img src="img/page/ex.png" class="lightboxDeleteBtn"/>
+                <div class="lightbox_img"></div>
+            </div>
         </div>
         <div class="centerDot"></div>
     </body>
