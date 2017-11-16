@@ -41,6 +41,10 @@ positionRelative{
     justify-content: center;
 }
 
+.no-padding{
+    padding: 0 !important;
+}
+
 .button{
     border: 1px solid #AAA;
     box-shadow: 1px 1px 2px #999;
@@ -254,61 +258,34 @@ path {
 }
 
 .upArrow{
-    top: 0px;
+    top: -30px;
     background-image: url("../img/page/upArrow.png");
     cursor:pointer;
 }
 
 .downArrow{
-    bottom: 0px;
+    bottom: -30px;
     background-image: url("../img/page/downArrow.png");
     cursor:pointer;
 }
 
 .grid{
     position:relative;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 5vh 5vh 55vh 5vh 5vh;
+    height:80vh;
     /*DEBD83*/
 }
 
+.grid .box{
+    height:70%;
+    width: 100%;
+}
+
 .left{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
+
 }
 
 .right{
-    grid-column-start: 2;
-    grid-column-end: end;
-    grid-row-start: 3;
-    grid-row-end: 4;
     border-left: 1px solid #DEBD83;
-}
-
-.top-right{
-    grid-column-start: 2;
-    grid-column-end: end;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    border-left: 1px solid #DEBD83;
-}
-
-.bottom-right{
-    grid-column-start: 2;
-    grid-column-end: end;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    border-left: 1px solid #DEBD83;
-}
-
-.divider{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
 }
 
 
