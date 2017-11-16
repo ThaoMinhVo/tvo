@@ -422,8 +422,8 @@ path {
 }
 
 .work .border{
-    background-color: #EFEFEF;
-    border: 10px solid #FFF;
+    background-color: #71A7A2;
+    border: 10px solid #71A7A2;
     width: 100%;
     height: 100%;
     position: relative;
@@ -436,7 +436,7 @@ path {
     height:100%;
     width: 100%;
     object-fit: contain;
-    background-color: #FFF;
+    background-color: #71A7A2;
 }
 .lightboxContainer{
     position: absolute;
@@ -455,7 +455,7 @@ path {
     display: block;
     width: 1058px;
     height: 642px;
-    border: 25px solid #FFF;
+    border: 25px solid #71A7A2;
     border-radius: 5px;
     box-shadow: 5px 5px 20px #000;
 }
@@ -465,7 +465,7 @@ path {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: #FFFFFF;
+    background-color: #71A7A2;
     width: 100%;
     height: 100%;
 }
@@ -500,7 +500,7 @@ path {
     }
     
     .grid {
-        margin-top: 100px;
+        margin-top: 50px;
     }
     
     .grid .box {
@@ -577,6 +577,7 @@ path {
 
     .skillGroup span{
         font-size: 30px;
+        padding: 0px 0px 10px 30px
     }
     
     
