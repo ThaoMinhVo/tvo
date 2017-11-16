@@ -317,7 +317,6 @@ path {
 }
 
 .content p{
-    font-size: 18px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
 }
@@ -496,6 +495,14 @@ path {
 
 /* Medium Devices, Desktops */
 @media only screen and (max-width : 992px) {
+    .skip {
+        font-size: 50px;
+    }
+    
+    .grid {
+        margin-top: 100px;
+    }
+    
     .grid .box {
         height: 100%;
     }
@@ -519,6 +526,65 @@ path {
         height: 70%;
         cursor: pointer;
     }
+    
+    .arrow{
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+    }
+
+    .upArrow{
+        top: -80px;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .downArrow{
+        bottom: -80px;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .content img {
+        width: 70%;
+    }
+    
+    .content p {
+        font-size: 50px;
+        text-align: center;
+    }
+    
+    /********************************/
+    /* SKILLS CONTENT */
+    /********************************/
+
+    .skillsContent h4{
+        border-bottom: 4px dashed #68A19C;
+        font-size: 60px;
+    }
+
+    .skillGroup{
+        margin-bottom: 10px;
+    }
+
+    .skillGroup_last{
+        margin-bottom: 0px;
+    }
+
+    .skillGroup span{
+        font-size: 30px;
+    }
+    
+    
+    .right-three > div {
+        width: 90%;
+        height: 50%;
+    }
+
 }
 
 /* Small Devices, Tablets */
