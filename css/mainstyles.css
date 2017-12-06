@@ -41,6 +41,10 @@ positionRelative{
     justify-content: center;
 }
 
+.no-padding{
+    padding: 0 !important;
+}
+
 .button{
     border: 1px solid #AAA;
     box-shadow: 1px 1px 2px #999;
@@ -254,61 +258,34 @@ path {
 }
 
 .upArrow{
-    top: 0px;
+    top: -30px;
     background-image: url("../img/page/upArrow.png");
     cursor:pointer;
 }
 
 .downArrow{
-    bottom: 0px;
+    bottom: -30px;
     background-image: url("../img/page/downArrow.png");
     cursor:pointer;
 }
 
 .grid{
     position:relative;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 5vh 5vh 55vh 5vh 5vh;
+    height:80vh;
     /*DEBD83*/
 }
 
+.grid .box{
+    height:70%;
+    width: 100%;
+}
+
 .left{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 3;
-    grid-row-end: 4;
+
 }
 
 .right{
-    grid-column-start: 2;
-    grid-column-end: end;
-    grid-row-start: 3;
-    grid-row-end: 4;
     border-left: 1px solid #DEBD83;
-}
-
-.top-right{
-    grid-column-start: 2;
-    grid-column-end: end;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    border-left: 1px solid #DEBD83;
-}
-
-.bottom-right{
-    grid-column-start: 2;
-    grid-column-end: end;
-    grid-row-start: 4;
-    grid-row-end: 5;
-    border-left: 1px solid #DEBD83;
-}
-
-.divider{
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
 }
 
 
@@ -340,7 +317,6 @@ path {
 }
 
 .content p{
-    font-size: 18px;
     font-family: 'Cormorant Garamond', serif;
     font-size: 30px;
 }
@@ -379,9 +355,6 @@ path {
 .right-three > div{
     width: 80%;
     height:70%;
-    display:flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .right-two,
@@ -417,37 +390,77 @@ path {
 /********************************/
 
 .work{
-    width: 33%;
-    height: 50%;
+    width: 32%;
+    height: 32%;
     background-color: #FFF;
     display: inline-block;
     border: 5px solid #B5D9D6;
     border-radius: 50px;
+    position: relative;
+/*
     animation-name: miniZoomOut;
     animation-duration: 0.5s;
+*/
 }
 
 .work:hover{
+/*    cursor: pointer;*/
+}
+
+.workHover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #FFF;
+    border-radius: 2px;
+    z-index: 100;
+    opacity: 0;
+    color: #71A7A2;
+    text-align: center;
+}
+
+.workHover:hover{
+    opacity: 0.95;
+}
+
+.workTitle{
+    color: #D4AA5C;
+    border-bottom: 1px solid #AAA;
+}
+
+.workPreview:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* .work:hover{
     animation-name: miniZoomIn;
     animation-duration: 0.5s;
-    width: 39%; 
-    height: 56%;
+    width: 33%; 
+    height: 33%;
     cursor: pointer;
 }
 
 @keyframes miniZoomIn {
-    0%   {width: 33%; height: 50%;}
-    100% {width: 39%; height: 56%;}
+    0%   {width: 32%; height: 33%;}
+    100% {width: 32%; height: 33%;}
 }
 
 @keyframes miniZoomOut {
-    0%   {width: 39%; height: 56%;}
-    100% {width: 33%; height: 50%;}
+    0%   {width: 32%; height: 33%;}
+    100% {width: 32%; height: 33%;}
+} */
+
+.workDetails{
+    display: block;
+    width: 100%;
 }
 
 .work .border{
-    background-color: #EFEFEF;
-    border: 10px solid #FFF;
+    background-color: #71A7A2;
+    border: 5px solid #FFF;
     width: 100%;
     height: 100%;
     position: relative;
@@ -457,10 +470,9 @@ path {
 }
 
 .work .smallImg{
-    height:100%;
     width: 100%;
     object-fit: contain;
-    background-color: #FFF;
+    background-color: #71A7A2;
 }
 .lightboxContainer{
     position: absolute;
@@ -489,7 +501,7 @@ path {
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: #FFFFFF;
+    background-color: #FFF;
     width: 100%;
     height: 100%;
 }
@@ -507,10 +519,159 @@ path {
     cursor: pointer;
 }
 
+/******************************************************************************/
+/* MEDIA QUERIES
+/******************************************************************************/
 
 
+/* Large Devices, Wide Screens */
+@media only screen and (max-width: 1200px){
+    
+}
 
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+    .navbar-inverse .navbar-toggler-icon{
+        height: 50px;
+        width: 50px;
+    }
+    
+    .navbar-inverse .navbar-brand img{
+        height: 100px;
+        width: 85px;
+    }
+    
+    .navbar-toggleable-md .navbar-nav .nav-link{
+        font-size: 40px;
+    }
+    
+    .skip {
+        font-size: 50px;
+    }
+    
+    .grid {
+        margin-top: 50px;
+        height: 75vh;
+    }
+    
+    .grid .box {
+        height: 100%;
+    }
+    
+    .right{
+        border-left: none;
+        border-top: 1px solid #DEBD83;
+        height: 50%;
+    }
+    
+    .left{
+        height: 50%;
+    }
+    
+    .work{
+    }
+    
+    .arrow{
+        width: 100px;
+        height: 100px;
+        margin-left: -50px;
+    }
 
+    .upArrow{
+        top: -80px;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .downArrow{
+        bottom: -80px;
+        width: 100px;
+        height: 100px;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    
+    .content img {
+        width: 70%;
+    }
+    
+    .content p {
+        font-size: 40px;
+        text-align: center;
+    }
+    
+    /********************************/
+    /* SKILLS CONTENT */
+    /********************************/
+
+    .skillsContent h4{
+        border-bottom: 4px dashed #68A19C;
+        font-size: 45px;
+    }
+
+    .skillGroup{
+        margin-bottom: 10px;
+    }
+
+    .skillGroup_last{
+        margin-bottom: 0px;
+    }
+
+    .skillGroup span{
+        font-size: 22px;
+        padding: 0px 0px 10px 30px;
+    }
+    
+    .right-three > div {
+        width: 90%;
+        height: 50%;
+    }
+
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    .navbar-inverse .navbar-toggler-icon{
+        height: 75px;
+        width: 75px;
+    }
+    
+    .navbar-inverse .navbar-brand img{
+        height: 100px;
+        width: 100px;
+    }
+    
+    .navbar-toggleable-md .navbar-nav .nav-link{
+        font-size: 40px;
+    }
+    
+    .skillsContent h4{
+        border-bottom: 4px dashed #68A19C;
+        font-size: 60px;
+    }
+    
+    .skillGroup span{
+        font-size: 30px;
+        padding: 0px 0px 10px 30px;
+    }
+    
+    .content p {
+        font-size: 50px;
+        text-align: center;
+    }
+}
+
+/* Extra Small Devices, Phones */ 
+@media only screen and (max-width : 480px) {
+
+}
+
+/* Custom, iPhone Retina */ 
+@media only screen and (max-width : 320px) {
+
+}
 
 
 

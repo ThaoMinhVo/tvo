@@ -433,8 +433,7 @@
                 <div>
                     <img id="floralColors" src="img/floralDesign.png" class="floralPlacement">
                 </div>
-            </div>
-            
+            </div> 
         </div>
         <div class="container">
             <header>
@@ -463,73 +462,164 @@
                     </div>
                 </nav>
             </header>
-            <main class="grid">
+            <main class="grid row">
                 <div id="up" class="upArrow arrow" onclick="arrowChangeState('up')"></div>
                 <div id="down" class="downArrow arrow" onclick="arrowChangeState('down')"></div>
-                <div class="left">
-                    <div id="l-one" class="content left-one animated fadeInDownBig">
-                        <img src="img/page/about.png"/>
-                    </div>
-                    <div id="l-two" class="content left-two animated">
-                        <div class="skillsContent">
-                            <div class="skillGroup">
-                                <h4>Development</h4>
-                                <span>HTML5 </span><span>CSS3 </span><span>Javscript: jQuery </span>
-                            </div>
-                            <div class="skillGroup">
-                                <h4>Design</h4>
-                                <span>Illustrator </span><span>InDesign </span><span>Photoshop </span><span>Lightroom </span>
-                            </div>
-                            <div class="skillGroup skillGroup_last">
-                                <h4>Other</h4>
-                                <span>Bootstrap </span><span>Media Queries </span><span>Git </span>
+                <div class="left col-lg-6 col-md-12 no-padding flex-center">
+                    <div class="box">
+                        <div id="l-one" class="content left-one animated fadeInDownBig">
+                            <img src="img/page/about.png"/>
+                        </div>
+                        <div id="l-two" class="content left-two animated">
+                            <div class="skillsContent">
+                                <div class="skillGroup">
+                                    <h4>Development</h4>
+                                    <span>HTML5 </span><span>CSS3 </span><span>Javscript: jQuery </span>
+                                </div>
+                                <div class="skillGroup">
+                                    <h4>Design</h4>
+                                    <span>Illustrator </span><span>InDesign </span><span>Photoshop </span><span>Lightroom </span>
+                                </div>
+                                <div class="skillGroup skillGroup_last">
+                                    <h4>Other</h4>
+                                    <span>Bootstrap </span><span>Media Queries </span><span>Git </span>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div id="l-three" class="content left-three animated">
-                        <img src="img/page/work.png"/>
-                    </div>
-                </div>
-                <div class="top-right"></div>
-                <div class="right">
-                    <div id="r-one" class="content right-one animated fadeInUpBig">
-                        <div>
-                            <!--<h2>Hi! I'm Thao.</h2>-->
-                            <p>Hi! <span>I'm Thao.</span> I'm a web developer and designer based in Southern California.</p>
-                            <!--My passion is to develop smooth and responsive websites with intuitive designs using the latest techologies available.-->
-                        </div>
-                    </div>
-                    <div id="r-two" class="content right-two animated">
-                        <img src="img/page/skills.png"/>
-                    </div>
-                    <div id="r-three" class="content right-three animated">
-                        <div class="workContainer">
-                            <div class="work work-a">
-                                <div class="border">
-                                    <img class="smallImg" src="img/work/sureco_small.png" onclick="lightboxShow('img/work/sureco_large.png')"/>
-                                </div>
-                            </div>
-                            <div class="work work-b">
-                                <div class="border">
-                                    <img class="smallImg" src="img/work/health_small.png" onclick="lightboxShow('img/work/health_large.png')"/>
-                                </div>
-                            </div>
-                            <div class="work work-c">
-                                <div class="border">
-                                    <img class="smallImg" src="img/work/healthrive_small.png" onclick="lightboxShow('img/work/healthrive_large.png')"/>
-                                </div>
-                            </div>
+                        <div id="l-three" class="content left-three animated">
+                            <img src="img/page/work.png"/>
                         </div>
                     </div>
                 </div>
-                <div class="bottom-right"></div>
+                <div class="right col-lg-6 col-md-12 no-padding flex-center">
+                    <div class="box">
+                        <div id="r-one" class="content right-one animated fadeInUpBig">
+                            <div>
+                                <!--<h2>Hi! I'm Thao.</h2>-->
+                                <p>Hi! <span>I'm Thao.</span> I'm a front-end web developer and designer based in Southern California.</p>
+                                <!--My passion is to develop smooth and responsive websites with intuitive designs using the latest techologies available.-->
+                            </div>
+                        </div>
+                        <div id="r-two" class="content right-two animated">
+                            <img src="img/page/skills.png"/>
+                        </div>
+                        <div id="r-three" class="content right-three animated">
+                            <div class="">
+                                <div class="work work-a">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Website</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/sureco_large.png')">Preview</a></div>
+                                            <div class="workDetails"><a href="http://sureco.com/BusinessHome.aspx" target="_blank">Visit</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/sureco_small.png" />
+                                    </div>
+                                </div>
+                                <div class="work work-b">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Website</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/health_large.png')">Preview</a></div>
+                                            <div class="workDetails"><a href="http://surecohealth.com" target="_blank">Visit</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/health_small.png" />
+                                    </div>
+                                </div>
+                                <div class="work work-c">
+                                    <div class="workHover flex-center" >
+                                        <div>
+                                            <div class="workDetails workTitle">Website</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/healthrive_large.png')">Preview</a></div>
+                                            <div class="workDetails"><a href="http://healthrives.com/" target="_blank">Visit</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/healthrive_small.png" />
+                                    </div>
+                                </div>
+                                <div class="work work-d">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Landing</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/landing_large.png')">Preview</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/landing_small.png"/>
+                                    </div>
+                                </div>
+                                <div class="work work-e">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Brochure</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/brochure_large.png')">Preview</a></div>
+                                            <div class="workDetails"><a href="img/work/Brochure_Design.pdf" target="_blank">Document</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/brochure_small.png"/>
+                                    </div>
+                                </div>
+                                <div class="work work-f">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Logo</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/logo_large.png')">Preview</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/logo_small.png"/>
+                                    </div>
+                                </div>
+                                <div class="work work-g">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Dashboard</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/dash_large.png')">Preview</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/dash_small.png"/>
+                                    </div>
+                                </div>
+                                <div class="work work-h">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Flyer</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/event_large.png')">Preview</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/event_small.png"/>
+                                    </div>
+                                </div>
+                                <div class="work work-i">
+                                    <div class="workHover flex-center">
+                                        <div>
+                                            <div class="workDetails workTitle">Flyer</div>
+                                            <div class="workDetails workPreview"><a onclick="lightboxShow('img/work/flyer_large.png')">Preview</a></div>
+                                        </div>
+                                    </div>
+                                    <div class="border">
+                                        <img class="smallImg" src="img/work/flyer_small.png"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </main>
             <footer></footer>
         </div>
-        <div class="lightboxContainer" onclick="lightboxHide();">
+        <div class="lightboxContainer">
             <div id="lightbox" class="animated">
-                <img src="img/page/ex.png" class="lightboxDeleteBtn"/>
+                <img src="img/page/ex.png" class="lightboxDeleteBtn" onclick="lightboxHide();"/>
                 <div class="lightbox_img"></div>
+                <div class="lightbox_url"></div>
             </div>
         </div>
         <div class="centerDot"></div>
